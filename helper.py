@@ -272,7 +272,7 @@ async def drm_download_video(url, qual, name, keys):
         current_dir = os.path.dirname(os.path.abspath(__file__))
 
 # Path to N_m3u8DL-RE
-        n_m3u8dl_re_path = os.path.join(current_dir, "N_m3u8DL-RE")
+        n_m3u8dl_re_path = os.path.join(current_dir, "N_m3u8DL-RE.exe")
 
 
         # Use N_m3u8DL-RE for decryption
