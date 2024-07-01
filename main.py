@@ -30,7 +30,7 @@ import datetime
 import aiohttp
 
 bot = Client("bot",
-             bot_token= "6178250261:AAGx5Z-uofPm2AASeFpvlx_zEQj0PAy99n0", 
+             bot_token= "6556042495:AAEYgNL0EDhqpA7P6SLJ-dzFath0q7gzttA", 
              #bot_token= os.environ.get("BOT_TOKEN"),
              api_id= 28590119,
              api_hash= "2494557bf21e6c5152f26070aa1a97c7")
