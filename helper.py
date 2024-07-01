@@ -268,10 +268,16 @@ async def drm_download_video(url, qual, name, keys):
         nqual="480"                
   
     try:
+        # Get the directory of the current script
+        current_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Path to N_m3u8DL-RE
+        n_m3u8dl_re_path = os.path.join(current_dir, "N_m3u8DL-RE")
+
 
         # Use N_m3u8DL-RE for decryption
         nurl = url.replace("master",f"master_{nqual}")
-        os.system(f'N_m3u8DL-RE --auto-select --key "{key1}:{key2}" "{nurl}" -mt -M format=mp4 --save-name "{name}"')
+        subprocess.run([n_m3u8dl_re_path, "--auto-select", "--key", f"{key1}:{key2}", nurl, "-mt", "-M", "format=mp4", "--save-name", name], check=True)
 
         # Verify download
         result = os.system(f'ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 "{name}.mp4"')
